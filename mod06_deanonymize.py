@@ -20,14 +20,14 @@ def link_records(anon_df, aux_df):
     """
     data = {
         "anon_id": [],
-        "name": []
+        "matched_name": []
     }
     for row in anon_df.itertuples(index=True):
       for auxrow in aux_df.itertuples(index=True):
         #print(auxrow.name)
         if (row.age == auxrow.age) & (row.zip3 == auxrow.zip3) & (row.gender == auxrow.gender):
           data["anon_id"].append(row.anon_id)
-          data["name"].append(auxrow.name)
+          data["matched_name"].append(auxrow.name)
           break
 
 
